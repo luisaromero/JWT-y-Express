@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const auth = require('./middlewares/auth');
+
 
 const app = express();
 app.use(express.json());
@@ -31,6 +33,11 @@ app.post('/auth/login', async (req, res) => {
     );
 
     return res.status(200).json({ ok: true, token });
+});
+
+// ruta protegida
+app.get('/api/perfil', auth, (req, res) => {
+    res.json({ ok: true, data: { email: req.user.email, role: req.user.role } });
 });
 
 const PORT = process.env.PORT || 3000;
