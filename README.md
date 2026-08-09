@@ -21,7 +21,7 @@ DB_USER=postgres
 DB_PASSWORD=tu_contraseña
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=jwt_demo
+DB_NAME=jwt_example
 ```
 
 ## 🛠️ Tecnologías
