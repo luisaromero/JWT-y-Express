@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Acceso denegado</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h2>No autorizado</h2>
+      <div
+        id="mensajeError"
+        class="error"
+        style="padding: 0.6rem; border-radius: 6px; margin-bottom: 1rem"
+      >
+        401 — Token inválido o expirado. Inicia sesión nuevamente.
+      </div>
+
+      <p style="font-size: 0.85rem; color: #555">Cabecera requerida:</p>
+      <p
+        style="
+          font-size: 0.8rem;
+          background: #f5f6f8;
+          padding: 0.5rem;
+          border-radius: 6px;
+          font-family: monospace;
+        "
+      >
+        Authorization: Bearer &lt;tu-token-jwt&gt;<br />
+        Content-Type: application/json
+      </p>
+
+      <button id="btnBack">Volver a Login</button>
+    </div>
+
+    <script src="/js/denied.js"></script>
+  </body>
+</html>
